@@ -76,14 +76,10 @@
       "boost/algorithm/string_regex.hpp"
     ]
   },
-  "boost_unit_test_framework":{
-    "header": [
-      "boost/test"
-    ]
-  },
   "boost_unittest_standalone":{
     "headerOnly": true,
     "header": [
+      "boost/test/unit_test.hpp",
       "boost/test/included/unit_test.hpp"
     ]
   }

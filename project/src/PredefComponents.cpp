@@ -38,7 +38,7 @@ std::map<std::string, Component *> PredefComponentList()
     static std::map<std::string, Component *> list;
 
     std::string err;
-    auto result = Json::parse(readAll("evoke-config.json"), err);
+    auto result = Json::parse(readAll("evoke-packages.json"), err);
     if(!err.empty())
     {
         std::cout << "read Json:" << err << "\n";
