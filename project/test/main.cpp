@@ -1,4 +1,3 @@
-// mmap
 #define BOOST_TEST_MODULE Evoke_project
 #include "Component.h"
 

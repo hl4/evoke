@@ -1,0 +1,90 @@
+{
+  "boost_interprocess": {
+    "headerOnly":true,
+    "header" : [
+      "boost/interprocess"
+    ]    
+  },
+  "boost_system":{
+    "header" : [
+    	"boost/system/error_code.hpp",
+    	"boost/system/system_error.hpp"
+    ]
+  },
+  "boost_filesystem":{
+    "header" : [
+    	"boost/filesystem.hpp",
+    	"boost/filesystem/fstream.hpp"
+    ],
+    "depend": "boost_system"
+  },
+  "boost_process":{
+    "headerOnly": true,
+    "header": [
+      "boost/process.hpp",
+      "boost/process/args.hpp",
+      "boost/process/async.hpp",
+      "boost/process/async_pipe.hpp",
+      "boost/process/async_system.hpp",
+      "boost/process/child.hpp",
+      "boost/process/cmd.hpp",
+      "boost/process/env.hpp",
+      "boost/process/environment.hpp",
+      "boost/process/error.hpp",
+      "boost/process/exception.hpp",
+      "boost/process/exe.hpp",
+      "boost/process/extend.hpp",
+      "boost/process/group.hpp",
+      "boost/process/io.hpp",
+      "boost/process/locale.hpp",
+      "boost/process/pipe.hpp",
+      "boost/process/posix.hpp",
+      "boost/process/search_path.hpp",
+      "boost/process/shell.hpp",
+      "boost/process/spawn.hpp",
+      "boost/process/start_dir.hpp",
+      "boost/process/system.hpp",
+      "boost/process/windows.hpp"
+    ]    
+  },
+  "boost_string_algo":{    
+    "headerOnly": true,
+    "header": [
+      "boost/algorithm/string.hpp",
+      "boost/algorithm/string/case_conv.hpp",
+      "boost/algorithm/string/classification.hpp",
+      "boost/algorithm/string/compare.hpp",
+      "boost/algorithm/string/concept.hpp",
+      "boost/algorithm/string/constants.hpp",
+      "boost/algorithm/string/erase.hpp",
+      "boost/algorithm/string/find.hpp",
+      "boost/algorithm/string/find_format.hpp",
+      "boost/algorithm/string/find_iterator.hpp",
+      "boost/algorithm/string/finder.hpp",
+      "boost/algorithm/string/formatter.hpp",
+      "boost/algorithm/string/iter_find.hpp",
+      "boost/algorithm/string/join.hpp",
+      "boost/algorithm/string/predicate.hpp",
+      "boost/algorithm/string/regex.hpp",
+      "boost/algorithm/string/regex_find_format.hpp",
+      "boost/algorithm/string/replace.hpp",
+      "boost/algorithm/string/sequence_traits.hpp",
+      "boost/algorithm/string/split.hpp",
+      "boost/algorithm/string/std_containers_traits.hpp",
+      "boost/algorithm/string/trim.hpp",
+      "boost/algorithm/string/trim_all.hpp",
+      "boost/algorithm/string_regex.hpp"
+    ]
+  },
+  "boost_unit_test_framework":{
+    "header": [
+      "boost/test"
+    ]
+  },
+  "boost_unittest_standalone":{
+    "headerOnly": true,
+    "header": [
+      "boost/test/included/unit_test.hpp"
+    ]
+  }
+}
