@@ -23,6 +23,7 @@ set(INCLUDES
     ${CMAKE_CURRENT_SOURCE_DIR}/toolsets/include
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/include
     ${CMAKE_CURRENT_SOURCE_DIR}/view/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/json11/include
 )
 
 set(SOURCES
@@ -50,6 +51,8 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/toolsets/src/known.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/toolsets/src/msvc.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/toolsets/src/Toolset.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/json11/src/json11.cpp
+
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

@@ -7,7 +7,7 @@
 
 void Configuration::LoadDefaults()
 {
-    blacklist = {"unity"};
+    blacklist = {"unity", "o", "obj", "out", "build", "lib"};
 #if defined(_WIN32)
     toolchain = "msvc";
     compileFlags = "/permissive- /std:c++latest";
@@ -32,7 +32,7 @@ Configuration::Configuration()
         {
             compileFlags = value;
         }
-        else if(key == "blocklist")
+        else if(key == "blacklist")
         {
             blacklist = splitWithQuotes(value);
         }

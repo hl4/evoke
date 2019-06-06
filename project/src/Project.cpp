@@ -4,6 +4,7 @@
 #include "Configuration.h"
 #include "File.h"
 #include "PredefComponents.h"
+#include "dotted.h"
 #include "known.h"
 
 #include <algorithm>
@@ -79,9 +80,7 @@ void Project::Reload()
 File *Project::CreateFile(Component &c, filesystem::path p)
 {
     std::string subpath = p.string();
-    if(subpath[0] == '.' && (subpath[1] == '/' || subpath[1] == '\\'))
-        subpath = subpath.substr(2);
-    File f(p, c);
+    File f(removeDot(p), c);
     auto f2 = files.emplace(p.string(), std::move(f));
     return &f2.first->second;
 }
@@ -267,8 +266,18 @@ void Project::MoveIncludeToImport()
 static Component *GetPredefComponent(const filesystem::path &path)
 {
     static auto list = PredefComponentList();
-    if(list.find(path.string()) != list.end())
-        return list.find(path.string())->second;
+
+    auto it = list.find(path.string());
+    if(it != list.end())
+    {
+        return it->second;
+    }
+
+    it = list.find(path.parent_path().string());
+    if(it != list.end())
+    {
+        return it->second;
+    }
     return nullptr;
 }
 
