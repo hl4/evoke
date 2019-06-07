@@ -74,7 +74,13 @@ else()
   target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs)
 endif()
 
+target_compile_options(${PROJECT_NAME} PRIVATE -fvisibility=hidden)
+
+target_compile_definitions(${PROJECT_NAME}
+                           PRIVATE ${boost_DEFINITIONS})
+
 target_include_directories(${PROJECT_NAME}
                            PRIVATE ${INCLUDES} ${boost_INCLUDE_DIRS})
+
 target_link_libraries(${PROJECT_NAME}
-                      PRIVATE Threads::Threads ${boost_LIBRARIES})
+                      PRIVATE Threads::Threads CONAN_LIB::boost_boost_filesystem CONAN_LIB::boost_boost_system)

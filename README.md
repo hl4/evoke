@@ -17,11 +17,28 @@ Right now it is not available as a package for common operating systems yet. To 
 
 It requires Boost 1.64 or higher; it uses boost.process (and boost.filesystem for MSVC). To compile, download the full source tree and type `make` in the place you downloaded it to. Then, run `bin/evoke_make` to build evoke using itself. When this succeeds, you will have a `bin/evoke` that does the same thing, but is built with Evoke. Copy this to `~/bin/evoke` for a user-local installation or to `/usr/local/bin/evoke` for a system-wide installation.
 
+prepared cmake and boost libraries
+
 ```console
 mkdir build && cd build  # create build directory
 cmake ..  # generate build system
 cmake --build .  # build evoke
 ```
+
+or using cmake above 3.14
+
+```console
+cmake -S . -B build 
+cmake --build out -j
+```
+
+or using conan, it will download prebuilt boost and cmake
+
+```console
+conan install -if build .
+conan build -bf build .
+```
+
 
 ## Usage
 
