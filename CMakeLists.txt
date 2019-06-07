@@ -11,6 +11,8 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
   )
 endif()
 
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+
 if(EVOKE_BUILD_WITH_UNITTEST)
     add_subdirectory("toolsets/test")
 endif()
@@ -66,13 +68,13 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC"
    OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "8.0.0")
    OR CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
   find_package(Boost REQUIRED COMPONENTS filesystem system)
-  target_link_libraries(${PROJECT_NAME} PRIVATE Boost::disable_autolinking)
+  # target_link_libraries(${PROJECT_NAME} PRIVATE Boost::disable_autolinking)
 else()
   find_package(Boost REQUIRED COMPONENTS system)
   target_link_libraries(${PROJECT_NAME} PRIVATE stdc++fs)
 endif()
 
 target_include_directories(${PROJECT_NAME}
-                           PRIVATE ${INCLUDES} ${Boost_INCLUDE_DIRS})
+                           PRIVATE ${INCLUDES} ${boost_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME}
-                      PRIVATE Threads::Threads ${Boost_LIBRARIES})
+                      PRIVATE Threads::Threads ${boost_LIBRARIES})
