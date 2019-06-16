@@ -1,0 +1,2 @@
+
+lib reporter : [ glob src/*.cpp ] ..//project : <include>include :  : <include>include ;

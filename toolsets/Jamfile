@@ -1,0 +1,2 @@
+
+lib toolsets : [ glob src/*.cpp ] ..//project : <include>include :  : <include>include ;

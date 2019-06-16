@@ -1,0 +1,2 @@
+
+lib project : [ glob src/*.cpp ] ..//fw ..//utils : <include>include :  : <include>include ;

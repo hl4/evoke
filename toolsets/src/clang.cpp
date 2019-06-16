@@ -3,7 +3,7 @@
 #include "File.h"
 #include "PendingCommand.h"
 #include "Project.h"
-#include "Toolset.h"
+#include "GenericToolset.h"
 #include "dotted.h"
 #include "globaloptions.h"
 

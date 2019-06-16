@@ -1,0 +1,20 @@
+project
+    : requirements <threading>multi <link>static <cxxflags>-std=c++17
+    ;
+
+explicit evoke-bin ;
+
+lib boost_system : : <name>boost_system ;
+lib boost_filesystem : : <name>boost_filesystem ;
+alias utils : : : : <include>utils/include ;
+exe evoke-bin :
+    evoke/src/Executor.cpp
+    evoke/src/main.cpp
+    evoke/src/JsonCompileDb.cpp
+    fw project reporter utils toolsets
+    boost_filesystem
+ :
+<include>evoke/include
+:
+ <cxxflags>-std=c++17
+;

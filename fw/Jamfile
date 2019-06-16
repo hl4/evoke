@@ -1,0 +1,2 @@
+
+lib fw : [ glob src/*.cpp ] : <include>include :  : <include>include ;
